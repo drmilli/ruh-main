@@ -38,7 +38,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.a
             href="#"
-            className="flex items-center gap-2.5 group"
+            className="flex items-center gap-2.5 group flex-shrink-0"
             whileHover={{ scale: 1.02 }}
           >
             <img src="/icon.png" alt="Ruh" className="w-9 h-9 object-contain" />
@@ -75,8 +75,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-ink-secondary hover:text-brand-primary transition-colors"
+            className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg text-ink-secondary hover:text-brand-primary hover:bg-gray-50 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -89,7 +90,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pb-4 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
+              className="md:hidden mt-4 pb-4 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden max-h-[80vh] overflow-y-auto"
             >
               <div className="flex flex-col gap-1 p-2">
                 {navLinks.map((link) => (
