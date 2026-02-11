@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import WalletButton from './WalletButton'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -60,7 +59,6 @@ const Navbar = () => {
 
           {/* Right Side - Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <WalletButton />
             <motion.a
               href="https://chrome.google.com/webstore"
               target="_blank"
@@ -104,7 +102,6 @@ const Navbar = () => {
                   </a>
                 ))}
                 <div className="flex flex-col gap-3 pt-4 mt-2 border-t border-gray-100">
-                  <WalletButton />
                   <a
                     href="https://chrome.google.com/webstore"
                     target="_blank"
